@@ -1,4 +1,5 @@
-from model.tools.logging import Logger
+from model.tools.logging import *
+
 
 connection_string = "sqlite:///model/repository/hospital_management.db"
 
