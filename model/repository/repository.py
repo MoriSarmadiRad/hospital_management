@@ -1,5 +1,8 @@
+from sqlalchemy_utils import database_exists, create_database
+from model.entity.base import Base
 from model.tools.logging import *
-
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 
 connection_string = "sqlite:///model/repository/hospital_management.db"
 

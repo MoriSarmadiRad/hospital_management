@@ -19,3 +19,17 @@ class Prescription(Base):
         self.date = date
         self.description = description
         self.status = status
+
+    def __repr__(self):
+        return f"<Prescription(id={self.prescription_id}, doctor_id={self.doctor_id}, patient_id={self.patient_id}, drug_id={self.drug_id},date={self.date},description={self.description}, status='{self.status}')>"
+
+    def to_tuple(self):
+        return (
+            self.prescription_id,
+            self.doctor_id,
+            self.patient_id,
+            self.drug_id,
+            self.date,
+            self.description,
+            self.status
+        )

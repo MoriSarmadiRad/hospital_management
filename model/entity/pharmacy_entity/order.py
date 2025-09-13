@@ -22,3 +22,17 @@ class Order(Base):
         self.total_amount = total_amount
         self.description = description
 
+    def __repr__(self):
+        return f"<Order(id={self.order_id}, prescription_id={self.prescription_id}, payment_num={self.payment_num}, drug_id={self.drug_id}, employee_id={self.employee_id}, order_date={self.order_date}, total_amount={self.total_amount}, description='{self.description}')>"
+
+    def to_tuple(self):
+        return (
+            self.order_id,
+            self.prescription_id,
+            self.payment_num,
+            self.drug_id,
+            self.employee_id,
+            self.order_date,
+            self.total_amount,
+            self.description
+        )
