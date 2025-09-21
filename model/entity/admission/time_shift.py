@@ -10,7 +10,7 @@ class TimeShift(Base):
     end_time = Column(String(30), nullable=False)
     day_of_week = Column(String(30), nullable=False)
     room_number = Column(Integer)
-    doctor_id = Column(Integer,Foreignkey("Doctor.doctor_id"), nullable=False)
+    doctor_id = Column(Integer,ForeignKey("doctor.doctor_id"), nullable=False)
 
     def __init__(self, start_time, end_time, day_of_week, room_number, doctor_id):
         self.start_time = start_time
