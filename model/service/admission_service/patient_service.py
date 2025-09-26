@@ -19,3 +19,4 @@ class PatientService:
 
     def find_by_id(self,patient_id):
         return self.repo.find_by_id(patient_id)
+

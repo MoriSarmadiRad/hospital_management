@@ -28,3 +28,11 @@ class MedicalController:
     def find_by_id(self,medical_id):
         medical = self.service.find_by_id(medical_id)
         return medical
+
+    @exception_handling
+    def find_all(self):
+        return self.service.find_all()
+
+    @exception_handling
+    def find_by_medical_id_and_type(self,medical_id,type):
+        return self.service.find_by_medical_id_and_type(medical_id , type)

@@ -28,3 +28,12 @@ class PatientService :
     def find_by_id(self,patient_id):
         patient = self.service.find_by_id(patient_id)
         return patient
+
+    @exception_handling
+    def find_all(self):
+        return self.service.find_all()
+
+
+    @exception_handling
+    def find_by_family_and_gender(self,family,gender):
+        return self.service.find_by_family_and_gender(family,gender)
