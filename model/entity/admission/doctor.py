@@ -5,6 +5,7 @@ class Doctor(Base):
     __tablename__ = "doctor"
 
     doctor_id = Column(Integer, primary_key=True, autoincrement=True)
+    department_id = Column(Integer, nullable=False)
     name = Column(String(30), nullable=False)
     family = Column(String(30), nullable=False)
     specialty = Column(String(30), nullable=False)
@@ -12,7 +13,8 @@ class Doctor(Base):
     phone_number = Column(String(30))
     email = Column(String(30))
 
-    def __init__(self, name, family, specialty, department, phone_number, email):
+    def __init__(self, department_id, name, family, specialty, department, phone_number, email):
+        self.department_id = department_id
         self.name = name
         self.family = family
         self.specialty = specialty
@@ -25,4 +27,4 @@ class Doctor(Base):
 
     def to_tuple(self):
         return tuple(
-            (self.doctor_id, self.name, self.family, self.specialty, self.department, self.phone_number, self.email))
+            (self.doctor_id, self.department_id, self.name, self.family, self.specialty, self.department, self.phone_number, self.email))

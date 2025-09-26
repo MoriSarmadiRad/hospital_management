@@ -8,13 +8,13 @@ class DoctorController:
         self.service = DoctorService()
 
     @exception_handling
-    def save(self,name,family,specialty,department,phone_number,email):
-        doctor = Doctor(name,family,specialty,department,phone_number,email)
+    def save(self,department_id,name,family,specialty,department,phone_number,email):
+        doctor = Doctor(department_id,name,family,specialty,department,phone_number,email)
         return self.service.save(doctor)
 
     @exception_handling
-    def edit(self,doctor_id,name,family,specialty,department,phone_number,email):
-        doctor = Doctor(name,family,specialty,department,phone_number,email)
+    def edit(self,doctor_id,department_id,name,family,specialty,department,phone_number,email):
+        doctor = Doctor(department_id,name,family,specialty,department,phone_number,email)
         doctor.doctor_id = doctor_id
         return self.service.edit(doctor)
 
