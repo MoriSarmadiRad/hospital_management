@@ -21,3 +21,6 @@ class MedicalService :
 
     def find_by_id(self,medical_id):
         return self.repo.find_by_id(medical_id)
+
+    def find_by_medical_id_and_type(self,medical_id,type):
+        return self.repo.find_by(and_(Medical.medical_id.like(medical_id + "%"), Medical.type.like(type + "%")))

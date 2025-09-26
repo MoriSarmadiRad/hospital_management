@@ -20,3 +20,5 @@ class PatientService:
     def find_by_id(self,patient_id):
         return self.repo.find_by_id(patient_id)
 
+    def find_by_family_and_gender(self,family,gender):
+        return self.repo.find_by(and_(Patient.family.like(family + "%"), Patient.gender.like(gender + "%")))

@@ -9,9 +9,9 @@ class Patient(Base):
     family = Column(String(30),nullable=False)
     age = Column(Integer)
     gender = Column(String(20),nullable=False)
-    phone_number = Column(Integer,nullable=False)
-    address = Column(String(30),nullable=False)
-    national_code = Column(Integer)
+    phone_number = Column(String(30),nullable=False)
+    address = Column(String(30))
+    national_code = Column(String(30))
 
 
     def __init__(self,name,family,age,gender,phone_number,address,national_code):

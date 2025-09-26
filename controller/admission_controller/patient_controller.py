@@ -3,14 +3,14 @@ from model.service.admission_service.patient_service import PatientService
 from model.entity.admission.patient import Patient
 
 
-class PatientService :
+class PatientController:
     def __init__(self):
         self.service = PatientService()
 
 
     @exception_handling
-    def save(self,name,family,age,gender,phone_number,adderss,national_code):
-        patient = Patient(name,family,age,gender,phone_number,adderss,national_code)
+    def save(self,name,family,age,gender,phone_number,address,national_code):
+        patient = Patient(name,family,age,gender,phone_number,address,national_code)
         return self.service.save(patient)
 
     @exception_handling
